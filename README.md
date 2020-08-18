@@ -56,8 +56,7 @@ def model_arch_for_word_embeddings(embedding_vector_len, num_output_neurons):
 	model.compile()
 	return model
 
-downstream_model = model_arch_for_word_embeddings(embedding_vector_len=768,
-												  num_output_neurons=2) 
+downstream_model = model_arch_for_word_embeddings(embedding_vector_len=768, num_output_neurons=2) 
 
 ## since bert outputs 768-hidden
 
@@ -171,10 +170,10 @@ policy_dict = {
 While fitting you can also utitlize `use_multiprocessing=True` and specify number of `workers`
 ```
 downstream_model.fit(train_dataloader,
-				  	 val_dataloader=val_dataloader,
-				  	 epochs=1,
-				  	 workers=6,
-				  	 use_multiprocessing=True)
+				  	         val_dataloader=val_dataloader,
+				  	         epochs=1,
+				  	         workers=6,
+				  	         use_multiprocessing=True)
 ```
 
 ## Supported pretrained models
