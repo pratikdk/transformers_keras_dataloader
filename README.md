@@ -170,10 +170,10 @@ policy_dict = {
 While fitting you can also utitlize `use_multiprocessing=True` and specify number of `workers`
 ```
 downstream_model.fit(train_dataloader,
-				  	         val_dataloader=val_dataloader,
-				  	         epochs=1,
-				  	         workers=6,
-				  	         use_multiprocessing=True)
+               val_dataloader=val_dataloader,
+               epochs=1,
+               workers=6,
+               use_multiprocessing=True)
 ```
 
 ## Supported pretrained models
