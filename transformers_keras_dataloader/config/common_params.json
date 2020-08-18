@@ -1,0 +1,11 @@
+{
+	"encoder_params": {
+		"add_special_tokens": true,
+		"truncation": true,
+		"pad_to_max_length": false,
+		"return_token_type_ids": false,
+		"return_attention_mask": true,
+		"return_overflowing_tokens": false,
+		"return_special_tokens_mask": false
+	}
+}

@@ -1,0 +1,6 @@
+numpy
+pandas
+tensorflow
+keras
+torch>=1.2.0
+transformers>=3.0.2

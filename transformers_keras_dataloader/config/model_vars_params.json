@@ -1,0 +1,416 @@
+{
+	"albert": {
+		"tokenizer_algorithm": "sentence_piece",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "sp_offset_mapper",
+			"spacing_indicator_symbol": "▁",
+			"subword_indicator_symbol": "",
+			"indicator_position": "left",
+			"bos_token": "[CLS]",
+			"eos_token": "[SEP]"
+		},
+		"parameter_overrides": {
+			"encoder_params": {}
+		}
+	},
+	"bart": {
+		"tokenizer_algorithm": "bpe",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "sp_offset_mapper",
+			"spacing_indicator_symbol": "Ġ",
+			"subword_indicator_symbol": "",
+			"indicator_position": "left",
+			"bos_token": "<s>",
+			"eos_token": "</s>"
+		},
+		"parameter_overrides": {
+			"encoder_params": {}
+		}
+	},
+	"bert": {
+		"tokenizer_algorithm": "word_piece",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "position_offset_mapper",
+			"spacing_indicator_symbol": "",
+			"subword_indicator_symbol": "",
+			"indicator_position": "",
+			"bos_token": "[CLS]",
+			"eos_token": "[SEP]"
+		},
+		"parameter_overrides": {
+			"encoder_params": {
+				"return_offsets_mapping": true
+			}
+		}
+	},
+	"camembert": {
+		"tokenizer_algorithm": "sentence_piece",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "sp_offset_mapper",
+			"spacing_indicator_symbol": "▁",
+			"subword_indicator_symbol": "",
+			"indicator_position": "left",
+			"bos_token": "<s>",
+			"eos_token": "</s>"
+		},
+		"parameter_overrides": {
+			"encoder_params": {}
+		}
+	},
+	"ctrl": {
+		"tokenizer_algorithm": "bpe",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "bpe_offset_mapper",
+			"spacing_indicator_symbol": "",
+			"subword_indicator_symbol": "@@",
+			"indicator_position": "right",
+			"bos_token": "",
+			"eos_token": ""
+		},
+		"parameter_overrides": {
+			"encoder_params": {}
+		}
+	},
+	"distilbert": {
+		"tokenizer_algorithm": "word_piece",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "position_offset_mapper",
+			"spacing_indicator_symbol": "",
+			"subword_indicator_symbol": "",
+			"indicator_position": "",
+			"bos_token": "",
+			"eos_token": ""
+		},
+		"parameter_overrides": {
+			"encoder_params": {
+				"return_offsets_mapping": true
+			}
+		}
+	},
+	"electra": {
+		"tokenizer_algorithm": "word_piece",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "position_offset_mapper",
+			"spacing_indicator_symbol": "",
+			"subword_indicator_symbol": "",
+			"indicator_position": "",
+			"bos_token": "",
+			"eos_token": ""
+		},
+		"parameter_overrides": {
+			"encoder_params": {
+				"return_offsets_mapping": true
+			}
+		}
+	},
+	"flaubert": {
+		"tokenizer_algorithm": "bpe",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "bpe_offset_mapper",
+			"spacing_indicator_symbol": "</w>",
+			"subword_indicator_symbol": "",
+			"indicator_position": "right",
+			"bos_token": "<s>",
+			"eos_token": "</s>"
+		},
+		"parameter_overrides": {
+			"encoder_params": {}
+		}
+	},
+	"gpt2": {
+		"tokenizer_algorithm": "byte_level_bpe",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "position_offset_mapper",
+			"spacing_indicator_symbol": "",
+			"subword_indicator_symbol": "",
+			"indicator_position": "",
+			"bos_token": "",
+			"eos_token": ""
+		},
+		"parameter_overrides": {
+			"encoder_params": {
+				"return_offsets_mapping": true
+			}
+		}
+	},
+	"longformer": {
+		"tokenizer_algorithm": "bpe",
+		"supports_word_embedding": false,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "sp_offset_mapper",
+			"spacing_indicator_symbol": "Ġ",
+			"subword_indicator_symbol": "",
+			"indicator_position": "left",
+			"bos_token": "<s>",
+			"eos_token": "</s>"
+		},
+		"parameter_overrides": {
+			"encoder_params": {}
+		}
+	},
+	"marian": {
+		"tokenizer_algorithm": "sentence_piece",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "sp_offset_mapper",
+			"spacing_indicator_symbol": "▁",
+			"subword_indicator_symbol": "",
+			"indicator_position": "left",
+			"bos_token": "",
+			"eos_token": "</s>"
+		},
+		"parameter_overrides": {
+			"encoder_params": {}
+		}
+	},
+	"mbart": {
+		"tokenizer_algorithm": "bpe",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "sp_offset_mapper",
+			"spacing_indicator_symbol": "▁",
+			"subword_indicator_symbol": "",
+			"indicator_position": "left",
+			"bos_token": "<s>",
+			"eos_token": "</s>"
+		},
+		"parameter_overrides": {
+			"encoder_params": {}
+		}
+	},
+	"mobilebert": {
+		"tokenizer_algorithm": "word_piece",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "position_offset_mapper",
+			"spacing_indicator_symbol": "",
+			"subword_indicator_symbol": "",
+			"indicator_position": "",
+			"bos_token": "",
+			"eos_token": ""
+		},
+		"parameter_overrides": {
+			"encoder_params": {
+				"return_offsets_mapping": true
+			}
+		}
+	},
+	"openai-gpt": {
+		"tokenizer_algorithm": "bpe",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "position_offset_mapper",
+			"spacing_indicator_symbol": "",
+			"subword_indicator_symbol": "",
+			"indicator_position": "",
+			"bos_token": "",
+			"eos_token": ""
+		},
+		"parameter_overrides": {
+			"encoder_params": {
+				"return_offsets_mapping": true
+			}
+		}
+	},
+	"reformer": {
+		"tokenizer_algorithm": "sentence_piece",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "sp_offset_mapper",
+			"spacing_indicator_symbol": "▁",
+			"subword_indicator_symbol": "",
+			"indicator_position": "left",
+			"bos_token": "",
+			"eos_token": "</s>"
+		},
+		"parameter_overrides": {
+			"encoder_params": {}
+		}
+	},
+	"retribert": {
+		"tokenizer_algorithm": "word_piece",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "position_offset_mapper",
+			"spacing_indicator_symbol": "",
+			"subword_indicator_symbol": "",
+			"indicator_position": "",
+			"bos_token": "",
+			"eos_token": ""
+		},
+		"parameter_overrides": {
+			"encoder_params": {
+				"return_offsets_mapping": true
+			}
+		}
+	},
+	"roberta": {
+		"tokenizer_algorithm": "bpe",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "position_offset_mapper",
+			"spacing_indicator_symbol": "",
+			"subword_indicator_symbol": "",
+			"indicator_position": "",
+			"bos_token": "",
+			"eos_token": ""
+		},
+		"parameter_overrides": {
+			"encoder_params": {
+				"return_offsets_mapping": true
+			}
+		}
+	},
+	"t5": {
+		"tokenizer_algorithm": "sentence_piece",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": true,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "sp_offset_mapper",
+			"spacing_indicator_symbol": "▁",
+			"subword_indicator_symbol": "",
+			"indicator_position": "left",
+			"bos_token": "",
+			"eos_token": "</s>"
+		},
+		"parameter_overrides": {
+			"encoder_params": {}
+		}
+	},
+	"transfo-xl": {
+		"tokenizer_algorithm": "word_level",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": false,
+		"offset_mapper_config": {
+			"offset_resolver": "position_offset_mapper",
+			"spacing_indicator_symbol": "",
+			"subword_indicator_symbol": "",
+			"indicator_position": "",
+			"bos_token": "",
+			"eos_token": ""
+		},
+		"parameter_overrides": {
+			"encoder_params": {
+				"return_offsets_mapping": true
+			}
+		}
+	},
+	"xlm": {
+		"tokenizer_algorithm": "bpe",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "bpe_offset_mapper",
+			"spacing_indicator_symbol": "",
+			"subword_indicator_symbol": "</w>",
+			"indicator_position": "right",
+			"bos_token": "<s>",
+			"eos_token": "</s>"
+		},
+		"parameter_overrides": {
+			"encoder_params": {}
+		}
+	},
+	"xlm-roberta": {
+		"tokenizer_algorithm": "sentence_piece",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "sp_offset_mapper",
+			"spacing_indicator_symbol": "▁",
+			"subword_indicator_symbol": "",
+			"indicator_position": "left",
+			"bos_token": "<s>",
+			"eos_token": "</s>"
+		},
+		"parameter_overrides": {
+			"encoder_params": {}
+		}
+	},
+	"xlnet": {
+		"tokenizer_algorithm": "sentence_piece",
+		"supports_word_embedding": true,
+		"supports_sentence_embedding": true,
+		"requires_target_sequence": false,
+		"requires_attention_mask": true,
+		"offset_mapper_config": {
+			"offset_resolver": "sp_offset_mapper",
+			"spacing_indicator_symbol": "▁",
+			"subword_indicator_symbol": "",
+			"indicator_position": "left",
+			"bos_token": "<s>",
+			"eos_token": "</s>"
+		},
+		"parameter_overrides": {
+			"encoder_params": {}
+		}
+	}
+}
