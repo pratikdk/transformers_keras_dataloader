@@ -1,3 +1,4 @@
+import warnings
 import torch
 from transformers import AutoTokenizer, AutoModel, AutoConfig
 
@@ -43,5 +44,8 @@ def load_pretrained_model_and_tokenizer(pretrained_model_name_or_path, return_mo
       device = torch.device('cuda')
       # Transfer model execution to GPU device
       model.to(device)
+
+    elif (use_cuda) and (not torch.cuda.is_available()):
+      warnings.warn("Ignoring value set for use_gpu=True, since GPU isn't available.")
 
   return tokenizer, model

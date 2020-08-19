@@ -184,12 +184,10 @@ class EmbeddingDataloader(Sequence):
                                        is_tokenizer_fast = self.tokenizer.is_fast,
                                        use_gpu = self.use_gpu,
                                        call_by_dataloader = True)
-
     # Organize data based on sampler
     self._organize_data()
     # Simple iterator for outputting dummy batches to test how input X and y is structured before encoding or embedding.
     self.dummy_counter = -1
-    print(f"Is the model fast: {self.tokenizer.is_fast}")
 
 
   def __len__(self):
@@ -240,7 +238,8 @@ class EmbeddingDataloader(Sequence):
       np.random.seed(self.random_seed)
       order = np.random.permutation(len(self.X))
       self.X = self.X[order]
-      self.y = self.y[order]
+      if self.y is not None:
+        self.y = self.y[order]
 
 
   def get_dummy_batch_for_testing(self):
