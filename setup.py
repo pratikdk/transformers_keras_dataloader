@@ -1,6 +1,7 @@
+import setuptools
 from setuptools import setup
 
-with open("README.md", "r") as fh:
+with open("README.md", "r", encoding="utf8") as fh:
     long_description = fh.read()
 
 with open('requirements.txt') as f:
@@ -15,11 +16,13 @@ setup(
     description="Transformers Keras Dataloader provides an EmbeddingDataLoader class, a subclass of keras.utils.Sequence which enables real-time embedding generation from pretrained transformer models while feeding it to your Keras model via batches.",
     long_description=long_description,
     long_description_content_type="text/markdown",
+    url = 'https://github.com/pratikdk/transformers_keras_dataloader',
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: Apache License, Version 2.0",
+        "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",
     ],
     install_requires=required,
+    keywords = ['transformers', 'embedding', 'dataloader', 'generator', 'huggingface', 'attention'],
 )
