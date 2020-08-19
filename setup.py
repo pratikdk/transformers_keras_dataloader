@@ -10,7 +10,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='transformers_keras_dataloader',
-    version='0.0.2',
+    version='0.0.3',
     author="Pratik Deoolwadikar",
     author_email="pratik.deoolwadikar@gmail.com",
     description="Transformers Keras Dataloader provides an EmbeddingDataLoader class, a subclass of keras.utils.Sequence which enables real-time embedding generation from pretrained transformer models while feeding it to your Keras model via batches.",
