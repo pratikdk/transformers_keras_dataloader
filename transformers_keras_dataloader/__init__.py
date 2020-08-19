@@ -1,4 +1,4 @@
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 
 from .scripts.util.load_tokenizer_and_model import load_pretrained_model_and_tokenizer
 from .scripts.EmbeddingDataloader import EmbeddingDataloader

@@ -1,7 +1,7 @@
 # Transformers Keras Dataloader 🔌
-**Transformers Keras Dataloader** provides an EmbeddingDataLoader class, a subclass of **keras.utils.Sequence** which enables real-time data feeding to your Keras model via ***batches***, hence making it possible to train with large datasets while overcoming the problem of loading the entire dataset in the memory prior to training.
+**Transformers Keras Dataloader** provides an EmbeddingDataloader class, a subclass of **keras.utils.Sequence** which enables real-time data feeding to your Keras model via ***batches***, hence making it possible to train with large datasets while overcoming the problem of loading the entire dataset in the memory prior to training.
 
-**EmbeddingDataLoader** inherently is a generator which works by implementing functions required by Keras to get new batch of data from your dataset while fitting and predicting. We leverage this generator concept by real time processing of data while fitting and predicting, which unlocks the capacity to **handle bigger datasets** and use **larger batch size**.
+**EmbeddingDataloader** inherently is a generator which works by implementing functions required by Keras to get new batch of data from your dataset while fitting and predicting. We leverage this generator concept by real time processing of data while fitting and predicting, which unlocks the capacity to **handle bigger datasets** and use **larger batch size**.
 When generating a training batch, for each sequence in the batch we get its embedding (either ***word embedding*** ***or sentence embedding***) by utilizing [**Huggingface's transformers**](https://huggingface.co/transformers/index.html) package.
 
 We have also given option(parameter) to **utilize** **GPU**(if available) for both data(storing/processing) and model(forward pass), Aditionally you can also utilize **multiprocessing** to proces your dataset on multiple cores in real time and feed it right away to your downstream model while fitting.
@@ -14,12 +14,12 @@ $ pip install transformers-keras-dataloader
 ```
 ##  Usage
 
-### Using EmbeddingDataLoader class
+### Using EmbeddingDataloader class
 
-Train by using EmbeddingDataLoader class to generate **word embeddings** for downstream training
+Train by using EmbeddingDataloader class to generate **word embeddings** for downstream training
 ```
 from transformers_keras_dataloader import load_pretrained_model_and_tokenizer
-from transformers_keras_dataloader import EmbeddingDataLoader
+from transformers_keras_dataloader import EmbeddingDataloader
 
 
 tokenizer, model = load_pretrained_model_and_tokenizer(pretrained_model_name_or_path = "bert-base-uncased",
@@ -27,21 +27,21 @@ tokenizer, model = load_pretrained_model_and_tokenizer(pretrained_model_name_or_
                                                        use_cuda = True)
 
 
-train_dataloader = EmbeddingDataLoader(embedding_type="word", model=model, tokenizer=tokenizer,
+train_dataloader = EmbeddingDataloader(embedding_type="word", model=model, tokenizer=tokenizer,
                                        X=train_X, batch_size=64,
                                        max_length=100, sampler='random',
                                        y=train_y, num_classes=2, get_one_hot_label=True,
                                        use_gpu=True,
                                        pooling_layer_number=11, policy_dict=None, oov='avg', infer_oov_after_embed=False)
 
-val_dataloader = EmbeddingDataLoader(embedding_type="word", model=model, tokenizer=tokenizer,
+val_dataloader = EmbeddingDataloader(embedding_type="word", model=model, tokenizer=tokenizer,
                                      X=val_X, batch_size=64,
                                      max_length=100, sampler='random',
                                      y=val_y, num_classes=2, get_one_hot_label=True,
                                      use_gpu=True,
                                      pooling_layer_number=11, policy_dict=None, oov='avg', infer_oov_after_embed=False)
 
-test_dataloader = EmbeddingDataLoader(embedding_type="word", model=model, tokenizer=tokenizer,
+test_dataloader = EmbeddingDataloader(embedding_type="word", model=model, tokenizer=tokenizer,
                                       X=test_X, batch_size=64,
                                       max_length=100, sampler='random',
                                       use_gpu=True,
@@ -66,10 +66,10 @@ history = downstream_model.fit(train_dataloader, val_dataloader=val_dataloader, 
 predictions = downstream_model.predict(test_dataloader)
 ```
 
-Train by using EmbeddingDataLoader class to generate **sentence embeddings** for downstream training
+Train by using EmbeddingDataloader class to generate **sentence embeddings** for downstream training
 ```
 from transformers_keras_dataloader import load_pretrained_model_and_tokenizer
-from transformers_keras_dataloader import EmbeddingDataLoader
+from transformers_keras_dataloader import EmbeddingDataloader
 
 
 tokenizer, model = load_pretrained_model_and_tokenizer(pretrained_model_name_or_path = "bert-base-uncased",
@@ -77,21 +77,21 @@ tokenizer, model = load_pretrained_model_and_tokenizer(pretrained_model_name_or_
                                                        use_cuda = True)
 
 
-train_dataloader = EmbeddingDataLoader(embedding_type="sentence", model=model, tokenizer=tokenizer,
+train_dataloader = EmbeddingDataloader(embedding_type="sentence", model=model, tokenizer=tokenizer,
                                        X=train_X, batch_size=64,
                                        max_length=100, sampler='random',
                                        y=train_y, num_classes=2, get_one_hot_label=True,
                                        use_gpu=True,
                                        pooling_layer_number=11, policy_dict=None)
 
-val_dataloader = EmbeddingDataLoader(embedding_type="sentence", model=model, tokenizer=tokenizer,
+val_dataloader = EmbeddingDataloader(embedding_type="sentence", model=model, tokenizer=tokenizer,
                                      X=val_X, batch_size=64,
                                      max_length=100, sampler='random',
                                      y=val_y, num_classes=2, get_one_hot_label=True,
                                      use_gpu=True,
                                      pooling_layer_number=11, policy_dict=None)
 
-test_dataloader = EmbeddingDataLoader(embedding_type="sentence", model=model, tokenizer=tokenizer,
+test_dataloader = EmbeddingDataloader(embedding_type="sentence", model=model, tokenizer=tokenizer,
                                       X=test_X, batch_size=64,
                                       max_length=100, sampler='random',
                                       use_gpu=True,
