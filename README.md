@@ -1,6 +1,8 @@
 # Transformers Keras Dataloader 🔌
 **Transformers Keras Dataloader** provides an EmbeddingDataloader class, a subclass of **keras.utils.Sequence** which enables real-time data feeding to your Keras model via ***batches***, hence making it possible to train with large datasets while overcoming the problem of loading the entire dataset in the memory prior to training.
 
+**Link** https://pypi.org/project/transformers-keras-dataloader/
+
 **EmbeddingDataloader** inherently is a generator which works by implementing functions required by Keras to get new batch of data from your dataset while fitting and predicting. We leverage this generator concept by real time processing of data while fitting and predicting, which unlocks the capacity to **handle bigger datasets** and use **larger batch size**.
 When generating a training batch, for each sequence in the batch we get its embedding (either ***word embedding*** ***or sentence embedding***) by utilizing [**Huggingface's transformers**](https://huggingface.co/transformers/index.html) package.
 
